@@ -27,7 +27,7 @@ Frontend (HTML + JS) on http://localhost:3000
 
 Then, go to http://localhost:3000, enter a URL and click Generate QR to get your code.
 
-## 🐳 Docker-only (optional)
+## 🐳 Docker-only
 If you want to run the backend alone using Docker:
 
 cd backend
