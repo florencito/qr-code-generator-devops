@@ -17,7 +17,6 @@ git clone https://github.com/florencito/qr-code-generator-devc.git
 cd qr-code-generator-devc
 docker-compose up --build
 This will start:
-
 Backend (Flask API) on http://localhost:8000
 
 Frontend (HTML + JS) on http://localhost:3000
