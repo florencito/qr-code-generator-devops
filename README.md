@@ -32,7 +32,7 @@ docker build -t qr-backend .
 docker run -p 8000:8000 qr-backend
 Then use Postman or curl to test the /generate endpoint.
 
-🗂️ Project Structure
+## 🗂️ Project Structure
 qr-code-generator/
 ├── backend/              # Flask API to generate QR
 ├── frontend/             # Static HTML + JS frontend
