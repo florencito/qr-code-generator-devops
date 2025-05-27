@@ -17,7 +17,7 @@
   <script>
     async function generateQR() {
       const url = document.getElementById("url").value;
-      const res = await fetch("https://qr-backend-83wg.onrender.com", {
+      const res = await fetch("https://qr-backend-83wg.onrender.com/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
