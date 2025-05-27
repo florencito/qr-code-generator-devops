@@ -14,9 +14,13 @@ A simple fullstack project that allows users to generate QR codes from URLs. Bui
 To run the project locally using Docker Compose:
 
 git clone https://github.com/florencito/qr-code-generator-devc.git
+
 cd qr-code-generator-devc
+
 docker-compose up --build
+
 This will start:
+
 Backend (Flask API) on http://localhost:8000
 
 Frontend (HTML + JS) on http://localhost:3000
@@ -36,9 +40,15 @@ Then use Postman or curl to test the /generate endpoint.
 
 ## 🗂️ Project Structure
 qr-code-generator/
+
 ├── backend/  # Flask API to generate QR
+
 ├── frontend/  # Static HTML + JS frontend
+
 ├── docker-compose.yml  # Compose file to run both services
+
 ├── terraform/  # (WIP) Simulated AWS infra
+
 ├── render.yaml  # Configuration for Render deployment
+
 └── README.md
