@@ -6,7 +6,6 @@ A simple fullstack project that allows users to generate QR codes from URLs. Bui
 - Python + Flask (backend)
 - HTML + CSS (frontend)
 - Docker & Docker Compose
-- Terraform (infra simulation)
 - GitHub Actions (CI/CD)
 - Vercel & Render (deployment)
 
