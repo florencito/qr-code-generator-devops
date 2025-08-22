@@ -2,33 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QR Code Generator</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>QR Code Generator — Create custom QR codes instantly</title>
+  <meta name="title" content="QR Code Generator — Create custom QR codes instantly" />
+  <meta name="description" content="Generate QR codes for URLs, text, WiFi, contacts and more. Download as PNG or SVG. Part of florenApps - privacy-friendly mini apps." />
+  <meta name="keywords" content="QR code generator, QR codes, URL to QR, WiFi QR, text QR, free QR generator, privacy-friendly" />
+  <meta name="author" content="Floren" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qr.florenapps.online/" />
+  <meta property="og:title" content="QR Code Generator — Create custom QR codes instantly" />
+  <meta property="og:description" content="Generate QR codes for URLs, text, WiFi, contacts and more. Download as PNG or SVG. Part of florenApps - privacy-friendly mini apps." />
+  <meta property="og:image" content="/og-qr.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://qr.florenapps.online/" />
+  <meta property="twitter:title" content="QR Code Generator — Create custom QR codes instantly" />
+  <meta property="twitter:description" content="Generate QR codes for URLs, text, WiFi, contacts and more. Download as PNG or SVG. Part of florenApps - privacy-friendly mini apps." />
+  <meta property="twitter:image" content="/og-qr.png" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Theme -->
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="color-scheme" content="light" />
+  
+  <!-- Performance -->
+  <link rel="preload" href="/src/main.js" as="script" crossorigin />
+  
+  <!-- Vercel Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>QR Code Generator</h1>
-    <input type="text" id="url" placeholder="Enter URL" />
-    <button onclick="generateQR()">Generate QR</button>
-    <div id="qr-result"></div>
+
+<body class="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 font-sans antialiased">
+  <!-- Main App Container -->
+  <div id="app" class="min-h-screen flex flex-col">
+    <!-- Loading State -->
+    <div id="loading" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+      <div class="flex flex-col items-center">
+        <div class="w-8 h-8 border-4 border-primary-200 border-t-primary-500 rounded-full animate-spin"></div>
+        <p class="mt-4 text-gray-600 animate-pulse">Loading QR Generator...</p>
+      </div>
+    </div>
+    
+    <!-- Header will be rendered here -->
+    <header id="header" class="opacity-0"></header>
+    
+    <!-- Main Content -->
+    <main id="main" class="flex-1 opacity-0">
+      <!-- QR Generator content will be rendered here -->
+    </main>
+    
+    <!-- Footer will be rendered here -->
+    <footer id="footer" class="opacity-0"></footer>
   </div>
 
-  <script>
-    async function generateQR() {
-      const url = document.getElementById("url").value;
-      const res = await fetch("https://qr-backend-83wg.onrender.com/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ url })
-      });
+  <script type="module" src="/src/main.js"></script>
 
-      const data = await res.json();
-      const img = `<img src="data:image/png;base64,${data.qr_code}" alt="QR Code"/>`;
-      document.getElementById("qr-result").innerHTML = img;
+  <!-- Additional styles for QR type buttons -->
+  <style>
+    .qr-type-btn {
+      @apply flex flex-col items-center justify-center p-3 rounded-xl border-2 border-gray-200/50 bg-white/80;
+      @apply hover:bg-white hover:border-primary-200 hover:scale-105;
+      @apply focus:outline-none focus:ring-4 focus:ring-primary-500/30 focus:border-primary-500;
+      @apply transition-all duration-200 ease-out cursor-pointer text-gray-600;
+      min-height: 80px;
     }
-  </script>
+    
+    .qr-type-btn.active {
+      @apply bg-primary-50 border-primary-300 text-primary-700;
+    }
+    
+    .qr-type-btn:hover {
+      @apply text-primary-600;
+    }
+    
+    .qr-form {
+      @apply hidden;
+    }
+    
+    .qr-form.active {
+      @apply block animate-fade-in;
+    }
+  </style>
 </body>
 </html>
