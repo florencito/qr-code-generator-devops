@@ -56,7 +56,7 @@ export function createFooter() {
             <a href="https://drinkmaster.florenapps.online" class="text-gray-600 hover:text-primary-600 transition-colors duration-200">
               🍻 DrinkMaster
             </a>
-            <a href="https://github.com/floren/florenapps-hub/issues" class="text-gray-600 hover:text-primary-600 transition-colors duration-200">
+            <a href="https://github.com/florencito/florenapps/issues" class="text-gray-600 hover:text-primary-600 transition-colors duration-200">
               💡 Suggest Feature
             </a>
           </div>

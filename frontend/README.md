@@ -145,4 +145,4 @@ This is part of the florenApps ecosystem. Contributions welcome!
 
 ---
 
-Made with ❤️ by [Floren](https://github.com/floren) | Part of [florenApps](https://florenapps.com)
+Made with ❤️ by [Floren](https://github.com/florencito) | Part of [florenApps](https://florenapps.com)
